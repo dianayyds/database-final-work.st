@@ -1,2 +1,2 @@
 # my-repository.st
-这是我的数据库大作业，实现了一个简单的铁路系统，分为用户和管理员，可以登记车票，购买车票，账号注册等，仅作记录。
+this is my first repository where is the beginning of the road to be the best cs worker.
