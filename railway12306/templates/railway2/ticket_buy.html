@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购票</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="../ticket_buy/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>账号</th>
+            <td><input name="PASSENGERID"></td>
+        </tr>
+         <tr>
+            <th>姓名</th>
+            <td><input name="PASSENGERNAME"></td>
+        </tr>
+         <tr>
+            <th>身份证号</th>
+            <td><input name="PASSENGERIDNUM"/></td>
+        </tr>
+         <tr>
+            <th>车次号</th>
+            <td><input name="TRAINID"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

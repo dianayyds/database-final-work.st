@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车票订单表</title>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+
+    </tr>
+        <th>订单号</th>
+        <th>乘客账号</th>
+        <th>乘客姓名</th>
+        <th>乘客身份证号</th>
+        <th>车次号</th>
+        <th>出发地</th>
+        <th>到达地</th>
+        <th>发车时间</th>
+        <th>到达时间</th>
+        <th>价格</th>
+        <th>座位类型</th>
+        <th>创建时间</th>
+        <th>操作</th>
+    </tr>
+    {% for ticketlist in ticketlists %}
+        <tr>
+            <td align="center">{{ ticketlist.DINGDANHAO }} </td>
+            <td align="center">{{ ticketlist.PASSENGERID }} </td>
+            <td align="center">{{ ticketlist.PASSENGERNAME }} </td>
+            <td align="center">{{ ticketlist.PASSENGERIDNUM }} </td>
+            <td align="center">{{ ticketlist.TRAINID }} </td>
+            <td align="center">{{ ticketlist.DAPARTUREPLACE}} </td>
+            <td align="center">{{ ticketlist.ARRIVALPLACE}} </td>
+            <td align="center">{{ ticketlist.DAPARTURETIME }} </td>
+            <td align="center">{{ ticketlist.ARRIVALTIME }} </td>
+            <td align="center">{{ ticketlist.PRICE }} </td>
+            <td align="center">{{ ticketlist.SEATTYPE }} </td>
+            <td align="center">{{ ticketlist.CREATETIME }} </td>
+            <td align="center">
+            <a href="../ticket_back/?DINGDANHAO={{ ticketlist.DINGDANHAO}}&TRAINID={{ ticketlist.TRAINID}} ">
+                    退票
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

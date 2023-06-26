@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乘客信息表</title>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+ <form method="get" action="../passenger_search/">
+            {% csrf_token %}
+            <tr>
+                <a>查找乘客账号</a><br>
+            <tr>
+            <tr>
+                <input name="ID"><br>
+            <tr>
+
+                <input type="submit"/><br>
+    </form>
+    <a href="../passenger_add">添加乘客</a>
+    <tr>
+        <th>账号</th>
+        <th>密码</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>身份证号</th>
+        <th>电话</th>
+        <th>操作</th>
+    </tr>
+    {% for passenger in passengers %}
+        <tr>
+            <td align="center">{{ passenger.ID }} </td>
+            <td align="center">{{ passenger.PASSWORD }} </td>
+            <td align="center">{{ passenger.NAME }} </td>
+            <td align="center">{{ passenger.AGE }} </td>
+            <td align="center">{{ passenger.SEX }} </td>
+            <td align="center">{{ passenger.IDNUMBER }} </td>
+            <td align="center">{{ passenger.TEL }} </td>
+            <td align="center">
+                <a href="../passenger_edit/?ID={{ passenger.ID}}">
+                    编辑
+                </a>
+                <a href="../passenger_delete/?ID={{ passenger.ID }}">
+                    注销
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

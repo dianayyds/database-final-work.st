@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员信息编辑</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="../administrator_edit/">
+    {% csrf_token %}
+    <input type="hidden" name="ID" value="{{ passenger.ID }}"/>
+    <table>
+        <tr>
+            <th>账号</th>
+            <td><input name="ID"></td>
+        </tr>
+        <tr>
+            <th>密码</th>
+            <td><input name="PASSWORD"/></td>
+        </tr>
+          <tr>
+            <th>工号</th>
+            <td><input name="JOBNUMBER"/></td>
+        </tr>
+        <tr>
+            <th>姓名</th>
+            <td><input name="NAME"/></td>
+        </tr>
+        <tr>
+            <th>电话</th>
+            <td><input name="TEL"/></td>
+        </tr>
+         <tr>
+            <th>职务</th>
+            <td><input name="POSTISION"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

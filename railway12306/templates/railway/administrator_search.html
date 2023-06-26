@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>余票查询结果</title>
+     <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+    <tr>
+        <th>账号</th>
+        <th>密码</th>
+        <th>工号</th>
+        <th>姓名</th>
+        <th>电话</th>
+        <th>职务</th>
+        <th>操作</th>
+    </tr>
+    {% for administrator in administrators %}
+         <tr>
+            <td align="center">{{ administrator.ID }} </td>
+            <td align="center">{{ administrator.PASSWORD }} </td>
+            <td align="center">{{ administrator.JOBNUMBER }} </td>
+             <td align="center">{{ administrator.NAME }} </td>
+            <td align="center">{{ administrator.TEL }} </td>
+            <td align="center">{{ administrator.POSTISION }} </td>
+            <td align="center">
+                <a href="../administrator_edit/?ID={{ administrator.ID}}">
+                    编辑
+                </a>
+                <a href="../administrator_delete/?ID={{ administrator.ID }}">
+                    注销
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Passenger</title>
+    <link rel="stylesheet" href="/static/common.css">
+
+</head>
+<body>
+
+<a><h2 class="a1">乘客您好</h2></a>
+<br>
+
+    <a href="../passenger_add"><h2 class="a2">注册</h2></a><br>
+
+     <form method="get" action="../passenger_search/">
+            {% csrf_token %}
+            <tr>
+                <a><h2 class="a2">输入账号登录</h2></a>
+            <tr>
+            <tr>
+                <input name="ID">
+            <tr>
+
+                <input type="submit"/><br>
+    </form>
+    <tr>
+    <a href="../ticket_information2"><h2 class="a2">查询车票</h2></a><br>
+    <tr>
+    <tr>
+    <form method="get" action="../ticket_list_search/">
+            {% csrf_token %}
+                <a><h2 class="a2">输入账号查询本人车票</h2> </a>
+                <input name="PASSENGERID">
+
+                <input type="submit"/><br>
+    </form>
+    <tr>
+    <tr>
+
+
+
+
+</body>
+</html>

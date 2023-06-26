@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>余票查询</title>
+     <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+    <form method="get" action="../ticket_search2/">
+            {% csrf_token %}
+            <tr>
+                <a>出发地</a><br>
+            <tr>
+            <tr>
+                <input name="DAPARTUREPLACE"><br>
+            <tr>
+            <tr>
+                <a>目的地</a><br>
+            <tr>
+            <tr>
+                <input name="ARRIVALPLACE"><br>
+            </tr>
+            <tr>
+                <a>出发日期</a><br>
+            <tr>
+                <tr>
+                 <input name="DAPARTUREDATE"><br>
+                <tr>
+                <input type="submit"/><br>
+    </form>
+    <tr>
+        <th>编号</th>
+        <th>车次号</th>
+        <th>出发地</th>
+        <th>到达地</th>
+        <th>发车时间</th>
+        <th>到达时间</th>
+        <th>价格</th>
+        <th>座位类型</th>
+        <th>余量</th>
+    </tr>
+</table>
+</body>
+</html>

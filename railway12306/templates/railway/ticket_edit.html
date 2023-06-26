@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员信息编辑</title>
+    <style>
+        form {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="../ticket_edit/">
+    {% csrf_token %}
+    <input type="hidden" name="ID" value="{{ ticket.ID }}"/>
+    <table>
+        <tr>
+            <th>编号</th>
+            <td><input name="NUM"></td>
+        </tr>
+        <tr>
+            <th>车次号</th>
+            <td><input name="TRAINID"/></td>
+        </tr>
+         <tr>
+            <th>出发地</th>
+            <td><input name="DAPARTUREPLACE"/></td>
+        </tr>
+         <tr>
+            <th>到达地</th>
+            <td><input name="ARRIVALPLACE"/></td>
+        </tr>
+        <tr>
+            <th>发车日期</th>
+            <td><input name="DAPARTUREDATE"/></td>
+        </tr>
+        <tr>
+            <th>发车时间</th>
+            <td><input name="DAPARTURETIME"/></td>
+        </tr>
+        <tr>
+            <th>到达时间</th>
+            <td><input name="ARRIVALTIME"/></td>
+        </tr>
+        <tr>
+            <th>价格</th>
+            <td><input name="PRICE"/></td>
+        </tr>
+        <tr>
+            <th>座位类型</th>
+            <td><input name="SEATTYPE"/></td>
+        </tr>
+        <tr>
+            <th>余量</th>
+            <td><input name="AMOUNT"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

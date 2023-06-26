@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>余票信息表</title>
+</head>
+<body>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+
+    </tr>
+            <form method="get" action="../ticket_search/">
+            {% csrf_token %}
+            <tr>
+                <a>出发地</a><br>
+            <tr>
+            <tr>
+                <input name="DAPARTUREPLACE"><br>
+            <tr>
+            <tr>
+                <a>目的地</a><br>
+            <tr>
+            <tr>
+                <input name="ARRIVALPLACE"><br>
+            </tr>
+            <tr>
+                <a>出发日期</a><br>
+            <tr>
+                <tr>
+                 <input name="DAPARTUREDATE"><br>
+                <tr>
+                <input type="submit"/><br>
+    </form>
+<a href="../ticket_add">添加车票</a>
+        <th>编号</th>
+        <th>车次号</th>
+        <th>出发地</th>
+        <th>到达地</th>
+        <th>发车日期</th>
+        <th>发车时间</th>
+        <th>到达时间</th>
+        <th>价格</th>
+        <th>座位类型</th>
+        <th>余量</th>
+        <th>操作</th>
+    </tr>
+    {% for ticket in tickets %}
+        <tr>
+            <td align="center">{{ ticket.NUM }} </td>
+            <td align="center">{{ ticket.TRAINID }} </td>
+            <td align="center">{{ ticket.DAPARTUREPLACE}} </td>
+            <td align="center">{{ ticket.ARRIVALPLACE}} </td>
+            <td align="center">{{ ticket.DAPARTUREDATE }} </td>
+            <td align="center">{{ ticket.DAPARTURETIME }} </td>
+            <td align="center">{{ ticket.ARRIVALTIME }} </td>
+            <td align="center">{{ ticket.PRICE }} </td>
+            <td align="center">{{ ticket.SEATTYPE }} </td>
+            <td align="center">{{ ticket.AMOUNT }} </td>
+            <td align="center">
+            <a href="../ticket_edit/?NUM={{ ticket.NUM}}">
+                    编辑
+                </a>
+                <a href="../ticket_delete/?NUM={{ticket.NUM}}">
+                    删除
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

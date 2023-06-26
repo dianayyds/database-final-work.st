@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员添加</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+
+
+<form action="../administrator_add/" method="post" class="basic-grey">
+    {% csrf_token %}
+    <div class="basic-grey">
+<h1>添加管理员
+<span>请填入你想添加的管理员信息.</span>
+</h1>
+<label>
+<span>ID :</span><input type="text" name="ID" placeholder="账号" >
+</label>
+<label>
+<span>PASSWORD :</span><input type="text" name="PASSWORD" placeholder="密码" >
+</label>
+<label>
+<span>JOBNUMBER :</span><input type="text" name="JOBNUMBER" placeholder="工号" >
+</label>
+<label>
+<span>NAME :</span><input type="text" name="NAME" placeholder="姓名" >
+</label>
+        <label>
+<span>TEL :</span><input type="text" name="TEL" placeholder="电话" >
+</label>
+        <label>
+<span>POSTISION :</span><input type="text" name="POSTISION" placeholder="职务" >
+</label>
+
+        <input type="submit" value="提交">
+        </div>
+</form>
+
+ <script>
+             function changeStyle() {
+                var template = document.getElementById("template");
+                var index = template.selectedIndex;
+                var templatevalue = template.options[index].value;
+                var templatecss = document.getElementById("templatecss");
+                templatecss.setAttribute("href","css/" + templatevalue + ".css");
+                document.getElementsByTagName("form")[0].setAttribute("class",templatevalue);
+          }
+ </script>
+
+</body>
+</html>
