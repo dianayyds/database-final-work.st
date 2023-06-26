@@ -1,2 +1,2 @@
 # my-repository.st
-this is ycx's first repository which is the beginning of the road to the best cs worker
+这是我的数据库大作业，实现了一个简单的铁路系统，分为用户和管理员，可以登记车票，购买车票，账号注册等，仅作记录。
